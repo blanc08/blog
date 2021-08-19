@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <h1 class="text-4xl text-italic text-white mb-5">
+    <h1 class="text-4xl text-italic mb-5">
         Well
     </h1>
 
