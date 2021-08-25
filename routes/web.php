@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Contribution;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ContributionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,16 +16,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [ContributionController::class, 'index']);
+
+Route::get('/about', function () {
+    return view('about', [
+        "title" => 'About me'
+    ]);
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/contributions', function () {
-    return view('contributions');
-});
-
+// * Auth
 require __DIR__.'/auth.php';
+
+Route::get('/contributions', [ContributionController::class, 'index']);
+
+Route::get('/contributions/{contribution:slug}', [ContributionController::class, 'show']);
+
+Route::get('/posts', [PostController::class, 'index']);
+
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
