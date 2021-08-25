@@ -1,10 +1,13 @@
 @extends('layouts.main')
 
 @section('content')
-    <h1 class="text-4xl text-italic text-white mb-5">
+    <h1 class="text-4xl text-italic mb-5">
         Contributions
     </h1>
 
+    <h2 class="text-2xl text-italic mb-5">
+        Latest
+    </h2>
 
     <p class="mb-8">Lorem ipsum dolor sit amet, consectetur <a href="#">random link</a> adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Vel risus commodo viverra maecenas accumsan lacus vel facilisis

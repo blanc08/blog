@@ -3,9 +3,9 @@
         <p class="font-bold my-4 md:my-12">Contact Me</p>
 
         <ul class="flex flex-wrap justify-between flex-row md:flex-col">
-            <li><a href="#" class="nav mx-2 md:mx-0">Email</a></li>
-            <li><a href="#" class="nav mx-2 md:mx-0">Twitter</a></li>
-            <li><a href="#" class="nav mx-2 md:mx-0">Instagram</a></li>
+            <li><a href="mailto:bagusoktaviadi1@gmail.com" class="nav mx-2 md:mx-0">Email</a></li>
+            <li><a href="https://twitter.com/succiduous08" target="_blank" class="nav mx-2 md:mx-0">Twitter</a></li>
+            <li><a href="https://instagram.com/blanc.08" target="_blank" class="nav mx-2 md:mx-0">Instagram</a></li>
             <li><a href="#" class="nav mx-2 md:mx-0">etc</a></li>
         </ul>
     </div>

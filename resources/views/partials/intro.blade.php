@@ -3,7 +3,7 @@
         <p class="font-bold my-2 md:my-4">Bagus Oktaviadi</p>
 
         <ul class="flex flex-wrap justify-between flex-col">
-            <li class="text-white underline"><i data-feather="circle"></i>Junior Programmer</li>
+            <li class="underline"><i data-feather="circle"></i>Junior Programmer</li>
             <li><a href="/contributions" class="nav">Contribution</a></li>
             <li><a href="/posts" class="nav">Blog</a></li>
         </ul>
