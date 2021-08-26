@@ -5,7 +5,7 @@
         <ul class="flex flex-wrap justify-between flex-col">
             <li class="underline">Junior Programmer</li>
             <li><a href="/contributions" class="nav">Contributions</a></li>
-            <li><a href="/posts" class="nav">Blog</a></li>
+            <li><a href="/posts" class="nav">Blogs</a></li>
         </ul>
         
         <a href="/about" class="normal font-bold hover:font-bold">more about me...</a>

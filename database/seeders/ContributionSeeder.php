@@ -17,12 +17,12 @@ class ContributionSeeder extends Seeder
     public function run()
     {
         DB::table('contributions')->insert([
-            'title' => Str::random(10),
-            'slug' => Str::random(100),
-            'image' => Str::random(100),
-            'exceprt' => Str::random(100),
-            'body' => Str::random(100),
-            'link' => Str::random(100),
+            "title" => "SKD - SCI Indonesia - Pekanbaru",
+            "slug" => "skd-sci-indonesia-pekanbaru",
+            "excerpt" => "Pembuatan Website Tryout simpel dengan mengunakan FrameWork Code Igniter",
+            "image" => "skd_sci_indonesia.jpg",
+            "body" => " - - - ",
+            "link" => "https://skd.tryoutindonesia.com"
         ]);
     }
 }

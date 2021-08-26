@@ -16,7 +16,7 @@ use App\Http\Controllers\ContributionController;
 |
 */
 
-Route::get('/', [ContributionController::class, 'index']);
+Route::get('/', [PostController::class, 'index']);
 
 Route::get('/about', function () {
     return view('about', [

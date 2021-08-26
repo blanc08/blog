@@ -22,9 +22,9 @@
                 <a class="p-0" href="/contributions/{{ $c->slug }}">
                     <h6 class="text-sm lg:text-lg text-italic mb-2">{{ $c->title }}</h6>
                     <img class="mb-2 lg:mb-3" src="/images/{{ $c->image }}" alt="{{ $c->title }}">
+                    <a class="float-right text-sm mb-3 ml-2" href="{{ $c->link }}" target="_blank">Kunjungi Web</a>
+                    <p class="text-sm">{{ $c->excerpt }}</p>
                 </a>
-                <a class="float-right text-sm mb-3 ml-2" href="{{ $c->link }}" target="_blank">Kunjungi Web</a>
-                <p class="text-sm">{{ $c->excerpt }}</p>
             </article>
 
 
