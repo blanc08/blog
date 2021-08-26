@@ -2,10 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Database\Seeders\PostSeeder;
 use Illuminate\Support\Facades\DB;
+use Database\Seeders\CategorySeeder;
+use Database\Seeders\ContributionSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,11 +31,14 @@ class DatabaseSeeder extends Seeder
         ]);
         
         User::factory(5)->create();
+        Post::factory(20)->create();
 
         $this->call([
             ContributionSeeder::class,
             PostSeeder::class,
             CategorySeeder::class,
         ]);
+
+
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Contribution;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContributionController;
@@ -24,12 +24,23 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 // * Auth
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+
+// * Dashboard -> Authenticated
+// ? with prefix
+// Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
+Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers\Dashboard'], function () {
+
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::resource('/ManagePosts', DashboardPostController::class);
+
+});
+
 
 Route::get('/contributions', [ContributionController::class, 'index']);
 

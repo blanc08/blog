@@ -31,6 +31,7 @@ class PostSeeder extends Seeder
             assumenda tempore minima ipsa ab recusandae sunt harum sint. Voluptatibus culpa
             adipisci soluta, odit repudiandae amet rerum unde!</p>
             ",
+            "created_at" => now(),
         ]);
     }
 }
