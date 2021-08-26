@@ -8,15 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Contribution extends Model
 {
     use HasFactory;
-    
-    protected $fillable = [
-        'title',
-        'slug',
-        'image',
-        'exceprt',
-        'body',
-        'link',
-    ];
+
+    protected $guarded = ['id'];
         
 
 }
