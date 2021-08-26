@@ -4,5 +4,5 @@ This is a simple blog made of Laravel
 
 ## Main Changes
 
-* Documentantion Improved
+* Post Management Prototype creaded
 
