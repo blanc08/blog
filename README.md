@@ -6,3 +6,4 @@ This is a simple blog made of Laravel
 
 * Documentantion Improved
 * Moving repository
+* Not sure
