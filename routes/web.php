@@ -1,9 +1,11 @@
 <?php
 
-use Illuminate\Routing\RouteGroup;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContributionController;
+use App\Http\Controllers\Dashboard\DashboardPostController;
+use App\Http\Controllers\PostController;
+use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,20 @@ use App\Http\Controllers\ContributionController;
 |
 */
 
+// Route::get('/', function () {
+//     return Inertia::render('Welcome', [
+//         'canLogin' => Route::has('login'),
+//         'canRegister' => Route::has('register'),
+//         'laravelVersion' => Application::VERSION,
+//         'phpVersion' => PHP_VERSION,
+//     ]);
+// });
+
+// Route::get('/dashboard', function () {
+//     return Inertia::render('Dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 Route::get('/', [PostController::class, 'index']);
 
 Route::get('/about', function () {
@@ -24,21 +40,15 @@ Route::get('/about', function () {
     ]);
 });
 
-// * Auth
-require __DIR__ . '/auth.php';
-
-
 // * Dashboard -> Authenticated
 // ? with prefix
 // Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
 Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers\Dashboard'], function () {
-
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 
     Route::resource('/ManagePosts', DashboardPostController::class);
-
 });
 
 
@@ -49,3 +59,5 @@ Route::get('/contributions/{contribution:slug}', [ContributionController::class,
 Route::get('/posts', [PostController::class, 'index']);
 
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
+
+require __DIR__ . '/auth.php';
