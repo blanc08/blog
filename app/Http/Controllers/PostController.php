@@ -15,10 +15,15 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('posts', [
-            "title" => "All Post",
-            "posts" => Post::with(['category'])->latest()->get()
-        ]);
+        $posts = Post::all();
+        return Inertia::render('Post/Index', ['posts' => $posts]);
+
+        // return Inertia::render('Welcome', [
+        //     'canLogin' => Route::has('login'),
+        //     'canRegister' => Route::has('register'),
+        //     'laravelVersion' => Application::VERSION,
+        //     'phpVersion' => PHP_VERSION,
+        // ]);
     }
 
     /**

@@ -58,9 +58,9 @@ export default function Guest({ children }) {
                                 </Link>
                             </li>
                             <li>
-                                <a href="/posts" className="nav">
+                                <Link href="/posts" className="nav">
                                     Blogs
-                                </a>
+                                </Link>
                             </li>
                         </ul>
 
