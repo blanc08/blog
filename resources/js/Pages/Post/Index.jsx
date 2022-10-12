@@ -3,8 +3,6 @@ import Guest from "@/Layouts/GuestLayout";
 import { Link, Head } from "@inertiajs/inertia-react";
 
 export default function Index(props) {
-    console.log(props.posts);
-
     if (props.posts.length === 0) {
         return (
             <Guest>
