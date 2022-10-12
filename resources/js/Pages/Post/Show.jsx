@@ -3,10 +3,11 @@ import Guest from "@/Layouts/GuestLayout";
 import parse from "html-react-parser";
 import { Link, Head } from "@inertiajs/inertia-react";
 
-export default function Show({ post }) {
+export default function Show({ post, title }) {
     console.log(post);
     return (
         <Guest>
+            <Head title={title} />
             <h2 className="text-2xl text-italic mb-5">
                 {post.title}
                 {/* <small className="text-sm">- {post.category.name}</small> */}
