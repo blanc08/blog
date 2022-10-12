@@ -45,17 +45,17 @@ export default function Guest({ children }) {
                 <div className="w-full md:w-3/12 lg:w-3/12 md:pr-10 order-1 md:order-1">
                     <div className="max-w-md md:float-right md:text-right leading-loose tracking-tight md:sticky md:top-0 ">
                         <p className="font-bold my-2 md:my-4">
-                            <a className="bg-transparent" href="/">
+                            <Link href="/" className="bg-transparent">
                                 Bagus Oktaviadi
-                            </a>
+                            </Link>
                         </p>
 
                         <ul className="flex flex-wrap justify-between flex-col">
                             <li className="underline">Junior Programmer</li>
                             <li>
-                                <a href="/contributions" className="nav">
+                                <Link href="/contributions" className="nav">
                                     Contributions
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <a href="/posts" className="nav">

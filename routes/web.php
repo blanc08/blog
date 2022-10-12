@@ -3,6 +3,7 @@
 use App\Http\Controllers\ContributionController;
 use App\Http\Controllers\Dashboard\DashboardPostController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -19,37 +20,14 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Post/Index');
+    $posts = Post::all();
+    return Inertia::render('Post/Index', ['posts' => $posts]);
     // return Inertia::render('Welcome', [
     //     'canLogin' => Route::has('login'),
     //     'canRegister' => Route::has('register'),
     //     'laravelVersion' => Application::VERSION,
     //     'phpVersion' => PHP_VERSION,
     // ]);
-});
-
-// Route::get('/dashboard', function () {
-//     return Inertia::render('Dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-
-// Route::get('/', [PostController::class, 'index']);
-
-Route::get('/about', function () {
-    return view('about', [
-        "title" => 'About me'
-    ]);
-});
-
-// * Dashboard -> Authenticated
-// ? with prefix
-// Route::group(['middleware' => 'auth', 'prefix' => 'dashboard'], function () {
-Route::group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers\Dashboard'], function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
-    Route::resource('/ManagePosts', DashboardPostController::class);
 });
 
 
@@ -60,5 +38,20 @@ Route::get('/contributions/{contribution:slug}', [ContributionController::class,
 Route::get('/posts', [PostController::class, 'index']);
 
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
+
+Route::get('/about', function () {
+    return view('about', [
+        "title" => 'About me'
+    ]);
+});
+
+// * Dashboard -> Authenticated
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::resource('/manage-posts', DashboardPostController::class);
+});
 
 require __DIR__ . '/auth.php';

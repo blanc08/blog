@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contribution;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class ContributionController extends Controller
 {
@@ -15,10 +16,14 @@ class ContributionController extends Controller
     public function index()
     {
 
-        return view('contributions' , [
-            "title" => "Contribution",
+        return Inertia::render('Contribution/Index', [
             "contributions" => Contribution::latest()->get()
         ]);
+
+        // return view('contributions', [
+        //     "title" => "Contribution",
+        //     "contributions" => Contribution::latest()->get()
+        // ]);
     }
 
     /**
@@ -51,8 +56,8 @@ class ContributionController extends Controller
     public function show(Contribution $contribution)
     {
         return view('showContribution', [
-           "title" => "Single Contribution", 
-           "contribution" => $contribution
+            "title" => "Single Contribution",
+            "contribution" => $contribution
         ]);
     }
 
