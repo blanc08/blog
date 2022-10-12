@@ -30,14 +30,13 @@ Route::get('/', function () {
     // ]);
 });
 
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/contributions', [ContributionController::class, 'index']);
 
 Route::get('/contributions/{contribution:slug}', [ContributionController::class, 'show']);
 
 Route::get('/posts', [PostController::class, 'index']);
-
-Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/about', function () {
     return view('about', [
